@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=nilaiZakat
+comment1.params=gaji\ pengeluaran
+comment1.target=void\ nilaiZakatProfesi(double,\ double)
+comment2.params=modal\ laba\ piutang\ hutang\ rugi
+comment2.target=void\ nilaiZakatPerdagangan(double,\ double,\ double,\ double,\ double)
+comment3.params=emas\ perak
+comment3.target=void\ nilaiZakatEmasPerak(double,\ double)
+comment4.params=saldo
+comment4.target=void\ nilaiZakatTabungan(double)
+comment5.params=kadartani\ panen
+comment5.target=void\ nilaiZakatPertanian(double,\ double)
+comment6.params=nilai
+comment6.target=void\ nilaiPilih(int)
+comment7.params=
+comment7.target=void\ pilihMenu()
+numComments=8
