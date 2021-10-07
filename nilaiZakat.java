@@ -15,13 +15,13 @@ public class nilaiZakat
     double saldoNasabah;
     double hartaEmas; //kadar emas dalam gram
     double hartaPerak; //kadar perak dalam gram
-    int nilaiEmas = 857000;
+    int nilaiEmas = 926000;
     int nilaiPerak = 837943;
     
     double kadar = 0.25; //kadar zakat yang harus dibayar
     double kadarPertanian;
     double hasilPanen;
-    double kadarBeras = 520 * 12043; //kadar beras nishob
+    double kadarBeras = 520000 * 10000; //kadar beras nishob
     
     double zakatProfesi;
     double zakatPerdagangan;
@@ -93,18 +93,18 @@ public class nilaiZakat
     {
         switch(pilih){
             case 1:
-            if (gajiSetahun >= (nilaiEmas * 0.085) && kebutuhan < gajiSetahun){
+            if ((gajiSetahun - kebutuhan) >= (nilaiEmas * 85)){
                 System.out.println("Nilai Zakat Profesi Anda Sebesar Rp" + zakatProfesi);
-            } else {
+            } else if ((gajiSetahun - kebutuhan) < (nilaiEmas * 85)){
                 System.out.println("Mohon Maaf Anda Belum Dapat Membayar Zakat Profesi. Dikarenakan Jumlah Minimum Gaji anda belum memenuhi Nishob.");
             }
             System.out.println("");
             break;
             
             case 2:
-            if (harta >= (nilaiEmas * 0.085) && minusHarta < harta){
+            if ((harta - minusHarta) >= (nilaiEmas * 85)){
                 System.out.println("Nilai Zakat Perdagangan Anda Sebesar Rp" + zakatPerdagangan);
-            } else {
+            } else if ((harta - minusHarta) < (nilaiEmas * 85)){
                 System.out.println("Mohon Maaf Anda Belum Dapat Membayar Zakat Perdagangan. Dikarenakan Jumlah Minimum Harta anda belum memenuhi Nishob.");
             }
             System.out.println("");

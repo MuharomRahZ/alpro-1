@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=transaksiSyariah
-comment1.params=saldo
-comment1.target=void\ nilaiSaldo(double)
-comment2.params=rupiah\ persen\ margin\ tahun\ bulan
+comment1.params=saldo\ tabungan\ bagihasil\ nisbah
+comment1.target=void\ nilaiSaldo(double,\ double,\ double,\ double)
+comment2.params=hargarumah\ persenuangmuka\ marginuntung\ kurunwaktutahun\ kurunwaktubulan
 comment2.target=void\ nilaiCicilan(double,\ double,\ double,\ double,\ double)
 comment3.params=p
 comment3.target=void\ nilaiPilih(int)

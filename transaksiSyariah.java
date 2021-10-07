@@ -3,9 +3,9 @@ public class transaksiSyariah
     //variabel nilai hasil bagi
     int pilih;
     double saldoNasabah;
-    int tabunganNasabah = 1000000000;
-    int distribusiBagiHasil = 500000000;
-    double nisbah = 0.15;
+    double tabunganNasabah;
+    double distribusiBagiHasil;
+    double nisbah;
     double hasilBagi;
     //variabel cicilan KPR
     double hargaRumah;
@@ -16,18 +16,21 @@ public class transaksiSyariah
     double nilaiUangMuka;
     double cicilan;
     
-    public void nilaiSaldo(double saldo)
+    public void nilaiSaldo(double saldo, double tabungan, double bagihasil, double nisbah)
     {
         saldoNasabah = saldo;
+        tabunganNasabah = tabungan;
+        distribusiBagiHasil = bagihasil;
+        nisbah = nisbah;
         hasilBagi = (saldoNasabah/tabunganNasabah) * distribusiBagiHasil * nisbah;
     }
     
-    public void nilaiCicilan(double rupiah, double persen, double margin, double tahun, double bulan){
-        hargaRumah = rupiah;
-        persenUangMuka = persen;
-        keuntungan = margin;
-        kurunWaktu = tahun;
-        kurunWaktuBulan = bulan;
+    public void nilaiCicilan(double hargarumah, double persenuangmuka, double marginuntung, double kurunwaktutahun, double kurunwaktubulan){
+        hargaRumah = hargarumah;
+        persenUangMuka = persenuangmuka;
+        keuntungan = marginuntung;
+        kurunWaktu = kurunwaktutahun;
+        kurunWaktuBulan = kurunwaktubulan;
         //nilai DP
         nilaiUangMuka = hargaRumah * persenUangMuka;
         //nilai cicilan KPR
