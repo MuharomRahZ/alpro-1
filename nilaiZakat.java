@@ -15,13 +15,13 @@ public class nilaiZakat
     double saldoNasabah;
     double hartaEmas; //kadar emas dalam gram
     double hartaPerak; //kadar perak dalam gram
-    int nilaiEmas = 926000;
-    int nilaiPerak = 837943;
+    double nilaiEmas;
+    double nilaiPerak;
     
     double kadar = 0.25; //kadar zakat yang harus dibayar
     double kadarPertanian;
     double hasilPanen;
-    double kadarBeras = 520000 * 10000; //kadar beras nishob
+    double kadarBeras; //kadar beras nishob
     
     double zakatProfesi;
     double zakatPerdagangan;
@@ -32,15 +32,17 @@ public class nilaiZakat
     double zakatPertanian5;
     //variabel nilai bagi hasil
     int pilih;
-    int tabunganNasabah = 1000000000;
-    int distribusiBagiHasil = 500000000;
-    double nisbah = 0.15;
+    double tabunganNasabah;
+    double distribusiBagiHasil;
+    double nisbah;
     double bagiHasil;
     
     //No. 1 
     public void nilaiZakatProfesi(double gaji, double pengeluaran){
         //zakatProfesi = (gajiSetahun - kebutuhan) * kadar; 
+        //System.out.println("Masukkan Nominal Gaji Dalam Setahun");
         gajiSetahun = gaji;
+        //System.out.println("Masukkan Total Pengeluaran Dalam Setahun");
         kebutuhan = pengeluaran;
         zakatProfesi = (gajiSetahun - kebutuhan) * kadar; 
     }
@@ -60,29 +62,36 @@ public class nilaiZakat
     }
     
     //No. 3 
-    public void nilaiZakatEmasPerak(double emas, double perak){
+    public void nilaiZakatEmasPerak(double hargaemas, double hargaperak, double emas, double perak){
         //zakatEmasPerak;
-        hartaEmas = emas;
-        hartaPerak = perak;
+        nilaiEmas = hargaemas;
+        nilaiPerak = hargaperak;
+        hartaEmas = emas * nilaiEmas;
+        hartaPerak = perak * nilaiPerak;
         
         zakatEmas = hartaEmas * kadar;
         zakatPerak = hartaPerak * kadar;
     }
     
     //No. 4
-    public void nilaiZakatTabungan(double saldo){
+    public void nilaiZakatTabungan(double saldo, double tabunganseluruhnasabah, double distribusibagihasil, double nisbah){
         saldoNasabah = saldo;
+        tabunganNasabah = tabunganseluruhnasabah;
+        distribusiBagiHasil = distribusibagihasil;
+        nisbah = nisbah;
+        
         bagiHasil = (saldoNasabah/tabunganNasabah) * distribusiBagiHasil * nisbah;
         zakatTabungan = (saldoNasabah - bagiHasil) * kadar;
     }
     
     //No. 5 
-    public void nilaiZakatPertanian(double kadartani, double panen){
+    public void nilaiZakatPertanian(double persenkadartani, double panen, double hargaberas){
         hasilPanen = panen;
-        kadarPertanian = kadartani;
+        kadarPertanian = persenkadartani;
+        kadarBeras = hargaberas * 520;
         
-        zakatPertanian10 = hasilPanen * kadarPertanian;
-        zakatPertanian5 = hasilPanen * kadarPertanian;
+        zakatPertanian10 = hasilPanen * (kadarPertanian/100);
+        zakatPertanian5 = hasilPanen * (kadarPertanian/100);
     }
     
     public void nilaiPilih(int nilai){
@@ -111,9 +120,9 @@ public class nilaiZakat
             break;
             
             case 3:
-            if (hartaEmas >= 0.085 && hartaPerak == 0){
+            if (hartaEmas >= 85 && hartaPerak == 0){
                 System.out.println("Nilai Zakat Emas Anda Sebesar Rp" + zakatEmas);
-            } else if (hartaPerak >= 0.595 && hartaEmas == 0){
+            } else if (hartaPerak >= 595 && hartaEmas == 0){
                 System.out.println("Nilai Zakat Perak Anda Sebesar Rp" + zakatPerak);
             } else{
                 System.out.println("Mohon Maaf Anda Belum Dapat Membayar Zakat Emas/Perak. Nilai Harta Emas/Perak Anda Belum Memenuhi Nishob");
@@ -122,7 +131,7 @@ public class nilaiZakat
             break;
             
             case 4:
-            if (saldoNasabah >= nilaiEmas * 0.085){
+            if ((saldoNasabah - bagiHasil) >= nilaiEmas * 85){
                 System.out.println("Nilai Zakat Tabungan Anda Sebesar Rp" + zakatTabungan);
             } else {
                 System.out.println("Mohon Maaf Anda Belum Dapat Membayar Zakat Tabungan. Nilai Saldo Tabungan Anda Belum Memenuhi Nishob");
@@ -131,9 +140,9 @@ public class nilaiZakat
             break;
             
             case 5:
-            if (kadarPertanian == 10 && hasilPanen >= kadarBeras){
+            if (hasilPanen >= kadarBeras && kadarPertanian == 10){
                 System.out.println("Nilai Zakat Pertanian Anda Sebesar Rp" + zakatPertanian10);
-            } else if (kadarPertanian == 5 && hasilPanen >= kadarBeras){
+            } else if (hasilPanen >= kadarBeras && kadarPertanian == 5){
                 System.out.println("Nilai Zakat Pertanian Anda Sebesar Rp" + zakatPertanian5);
             } else{
                 System.out.println("Mohon Maaf Anda Belum Dapat Membayar Zakat Pertanian. Nilai Hasil Pertanian Anda Belum Memenuhi Nishob");

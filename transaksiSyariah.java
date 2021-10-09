@@ -34,7 +34,7 @@ public class transaksiSyariah
         //nilai DP
         nilaiUangMuka = hargaRumah * persenUangMuka;
         //nilai cicilan KPR
-        cicilan = (hargaRumah - nilaiUangMuka) * (keuntungan * kurunWaktu) + ((hargaRumah - nilaiUangMuka)/kurunWaktuBulan);
+        cicilan = ((hargaRumah - nilaiUangMuka) * (keuntungan * kurunWaktu) + (hargaRumah - nilaiUangMuka))/kurunWaktuBulan;
     }
     
     public void nilaiPilih(int p){
