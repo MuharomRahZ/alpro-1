@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=operasiFile
+comment1.params=
+comment1.target=void\ ambilData()
+comment2.params=
+comment2.target=double\ hitungMean()
+comment3.params=
+comment3.target=double\ quartilSatu()
+comment4.params=
+comment4.target=double\ quartilDua()
+comment5.params=
+comment5.target=double\ quartilTiga()
+numComments=6

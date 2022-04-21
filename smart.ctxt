@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=smart
+comment1.params=nkriteria
+comment1.target=smart(double[][])
+comment10.params=
+comment10.target=void\ printNilaiAkhir()
+comment2.params=b
+comment2.target=void\ setBobot(double[])
+comment3.params=
+comment3.target=void\ printData()
+comment4.params=min
+comment4.target=void\ utilityC1(int)
+comment5.params=min
+comment5.target=void\ utilityC2(int)
+comment6.params=min
+comment6.target=void\ utilityC3(int)
+comment7.params=min
+comment7.target=void\ utilityC4(int)
+comment8.params=
+comment8.target=void\ printUtility()
+comment9.params=
+comment9.target=void\ nilaiAkhir()
+numComments=11
